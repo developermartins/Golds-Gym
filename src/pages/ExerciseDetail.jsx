@@ -26,8 +26,8 @@ const ExerciseDetail = () => {
       const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions);
       setExerciseDetail(exerciseDetailData);
 
-      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?q=${exerciseDetailData.name}`, youTubeVideosOptions);
-      setExerciseVideos(exerciseVideosData);
+      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`, youTubeVideosOptions);
+      setExerciseVideos(exerciseVideosData.contents);
     };
 
     fetchExercisesData();
